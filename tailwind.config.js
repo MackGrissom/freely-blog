@@ -1,8 +1,8 @@
-// @ts-check
 const { fontFamily } = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
+const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette')
 
-/** @type {import("tailwindcss/types").Config } */
+/** @type {import("tailwindcss/types").Config} */
 module.exports = {
   content: [
     './node_modules/pliny/**/*.js',
@@ -11,6 +11,7 @@ module.exports = {
     './components/**/*.{js,ts,tsx}',
     './layouts/**/*.{js,ts,tsx}',
     './data/**/*.mdx',
+    './src/**/*.{ts,tsx}', // Add the src folder for the content
   ],
   darkMode: 'class',
   theme: {
@@ -67,5 +68,19 @@ module.exports = {
       }),
     },
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    // Add the addVariablesForColors plugin
+    ({ addBase, theme }) => {
+      let allColors = flattenColorPalette(theme('colors'))
+      let newVars = Object.fromEntries(
+        Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+      )
+
+      addBase({
+        ':root': newVars,
+      })
+    },
+  ],
 }
