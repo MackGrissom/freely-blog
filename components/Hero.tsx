@@ -4,7 +4,7 @@ import Banner from './Banner'
 
 export default function Hero() {
   const title = `A Place For Freelancers`
-  const description = 'Hire. Network. Learn.'
+  const description = 'Hire. Network. Learn. Save.'
   const longdesc =
     'Read expert insights, contribute articles, explore job opportunities on our job board, and show your support with our exclusive merchandise. Join us in shaping the future of freelancing'
   const callToAction1Text = 'Get started'
