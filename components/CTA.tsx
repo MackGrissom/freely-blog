@@ -1,5 +1,10 @@
 import { ArrowTrendingUpIcon, BanknotesIcon } from '@heroicons/react/20/solid'
-import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+import {
+  ArrowPathIcon,
+  CloudArrowUpIcon,
+  FingerPrintIcon,
+  LockClosedIcon,
+} from '@heroicons/react/24/outline'
 
 const benefits = [
   {
@@ -30,15 +35,14 @@ const benefits = [
 
 export default function CTA() {
   return (
-    <div className="bg-white py-24 sm:py-32 mt-20">
+    <div className="mt-20 bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-[#BE8803] ">Why Choose Us</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Our unorthodox approach to freelancing
+            An unorthodox approach to freelancing
           </p>
-          <p className="m-2 text-l font-semibold tracking-tight"> 
-We eliminate the overcrowded and frankly unpleasant experience offered by popular freelance platforms. We exclusively permit real individuals, not bots, to post and discover genuine jobs. No nonsense. No inflated or saturated pricing.</p>
+          
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
